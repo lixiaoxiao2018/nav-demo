@@ -1,0 +1,62 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none;}
+kbd{border: 1px solid red;width: 4em;height: 4em;display: inline-block;
+    text-transform:uppercase;
+    position: relative;  /*绝对定位 */ 
+}    /*小写字母变大写 text-transform:uppercase  */
+kbd > button{
+    position: absolute;     /* kbd绝对定位 */
+    right: 0;
+    bottom: 0;
+    display: none;
+}  
+kbd:hover > button{        /*触碰的时候显示编辑  */
+    display: inline-block;
+}
+body{
+    background: grey url(./wall.png) no-repeat center center;
+    background-size: cover;   /* 背景图片覆盖页面 */
+}
+
+
+main{
+    text-align: center;
+    display: flex;        /*在父元素添加此三行可以做到页面居中 */
+    justify-content: center;   /*在父元素添加此三行可以做到页面居中 */
+    align-items: center;        /*在父元素添加此三行可以做到页面居中 */
+    height: 100vh;             /*在父元素添加此三行可以做到页面居中(100vh是页面的高度)*/
+}
+#main{
+   display: inline-block;     /*将main所在的div变成内联元素  */
+}
+#main > div:nth-child(2){
+    margin-left: -22px;
+}
+#main > div:nth-child(3){
+    margin-left: -80px;
+}
+.wrapper{
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+}
+.key{ width: 50px;height:40px;background: linear-gradient(to bottom, #1e5799 0%,#414141 0%,#171717 100%);/* 键盘渐变获取的值*/
+    border: 1px solid #373737;color: #c5c5c5; border-radius: 6px;box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2PX #1F2020, 0 3PX 0 2PX #080808;/*键盘阴影*/
+    position:relative; /*相对定位*/   font-size:16px; font-family: Helvetica; }  
+.row{
+     margin: 20px;
+   }
+.row .key{
+     margin: 0 8px;
+   }
+.key img{
+    width: 16px;
+    height: 16px;
+    position: absolute;  /*j绝对定位 (以下三句是将图标放在右下角) */
+    left: 24px;
+    bottom: 2px;
+}
+.key .text{
+     position: absolute;
+     left: 4px;
+     top: 2px;
+}
